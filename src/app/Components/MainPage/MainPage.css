@@ -1,0 +1,27 @@
+.mainPageCountriesSection{
+    justify-content: center;
+    margin: auto;
+    padding: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.mainPageCountryCard{
+    margin: 1%;
+}
+.mainPageImgCard{
+    max-height: 148px;
+}
+.mainTextOfCountries{
+    display: flex;
+    font-weight: bold;
+    margin: 0%;
+}
+.mainTextOfCountries p{
+    font-weight: normal;
+    padding-left:2% ;
+}
+.mainPageCardTitle{
+    font-weight: bolder !important;
+    font-size: 20px !important;
+    
+}
