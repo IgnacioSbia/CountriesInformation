@@ -1,7 +1,7 @@
 import React from 'react'
 import './Country.css';
 
-function Country() {
+function Page() {
   return (
     /*Here should go the NavBar to toggle between Dark and Light mode. */
     <main>
@@ -23,4 +23,4 @@ function Country() {
   )
 }
 
-export default Country
+export default Page

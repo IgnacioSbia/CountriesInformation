@@ -4,6 +4,7 @@ import NavBar from '../NavBar/NavBar';
 import Card from 'react-bootstrap/Card';
 import './MainPage.css';
 import { format } from 'util';
+import Link from 'next/link';
 
 function MainPage() {
   const region = false;
@@ -37,7 +38,8 @@ function MainPage() {
           {countries ? countries.map((country:any)=>{
           return <Card style={{ width: '18rem' }} className='mainPageCountryCard'>
             {/* All the country info and a Loading screen.*/}
-          <Card.Img variant="top" src={country.flags.png} className='mainPageImgCard'alt='Country Flag'/>
+            <Link href={"/countryPage"} className='mainLinkToCountries'>
+            <Card.Img variant="top" src={country.flags.png} className='mainPageImgCard'alt='Country Flag'/>
             <Card.Body>
               <Card.Title className='mainPageCardTitle'>{country.name.common}</Card.Title>
               <Card.Text className='mainTextOfCountries'>
@@ -50,6 +52,7 @@ function MainPage() {
                 Capital: <p>{country.capital ? country.capital : "None"}</p>
               </Card.Text>
             </Card.Body>
+            </Link>
           </Card>}): <div><h1>Loading...</h1></div>}
         </section>
       </main>
