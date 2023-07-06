@@ -8,6 +8,7 @@ import Link from 'next/link';
 
 function MainPage() {
   const region = false;
+  const [selectedCountry, setSelectedCountry] = useState('');
   const [countries, setCountries] = useState([]);
 
   useEffect(()=>{
@@ -23,7 +24,14 @@ function MainPage() {
         .catch(error => console.log('error', error));
     };
     getAllCntries();
-  },[])
+  },[]);
+  
+  const handleClick = (countryName:any)=>{
+    setSelectedCountry(countryName);
+    console.log(countryName);
+    localStorage.setItem('country', countryName);
+  }
+
   console.log(countries);
   
   return (
@@ -36,9 +44,9 @@ function MainPage() {
       <main className='mainPageMain'>
         <section className='mainPageCountriesSection'>
           {countries ? countries.map((country:any)=>{
-          return <Card style={{ width: '18rem' }} className='mainPageCountryCard'>
+          return <Card style={{ width: '18rem' }} className='mainPageCountryCard' onClick={ ()=>handleClick(country.name.common)} >
             {/* All the country info and a Loading screen.*/}
-            <Link href={"/countryPage"} className='mainLinkToCountries'>
+            <Link href={"/countryPage"} className='mainLinkToCountries' >
             <Card.Img variant="top" src={country.flags.png} className='mainPageImgCard'alt='Country Flag'/>
             <Card.Body>
               <Card.Title className='mainPageCardTitle'>{country.name.common}</Card.Title>
