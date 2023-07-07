@@ -28,11 +28,8 @@ function MainPage() {
   
   const handleClick = (countryName:any)=>{
     setSelectedCountry(countryName);
-    console.log(countryName);
     localStorage.setItem('country', countryName);
   }
-
-  console.log(countries);
   
   return (
     <>
@@ -61,7 +58,7 @@ function MainPage() {
               </Card.Text>
             </Card.Body>
             </Link>
-          </Card>}): <div><h1>Loading...</h1></div>}
+          </Card>}): <><h1>Loading...</h1></>}
         </section>
       </main>
     </>
