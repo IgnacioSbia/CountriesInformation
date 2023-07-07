@@ -32,15 +32,14 @@ function Page() {
         {country ? 
           
         <> 
-          <section>
-            <img/>
+          <section className='countryPageImg'>
+            <img  src={country[0].flags.png}/>
           </section>
-          <aside>
+          <aside className='countryMainInfo'>
               <h1>Name: {country[0].name.common}</h1>
               <p>Population: {country[0].population.toLocaleString('en-US')}</p>
               <p>Region: {country[0].region}</p>
               <p>Sub Region: {country[0].subregion ? country[0].subregion : "none"}</p>
-              <p>Capital: {country[0].capital ? country[0].capita.map((capitals:any)=>{return capitals}) : "none"}</p>
               <p>Currency:</p>
           </aside>
         </> 
