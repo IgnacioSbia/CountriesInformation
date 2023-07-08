@@ -7,11 +7,13 @@ import { format } from 'util';
 import Link from 'next/link';
 
 function MainPage() {
-  const region = false;
+  const [firstLoad, setFirstLoad] = useState<boolean>(true);
   const [selectedCountry, setSelectedCountry] = useState('');
   const [countries, setCountries] = useState([]);
+  const [selectedRegion, setSelectedRegion] = useState<any>();
 
   useEffect(()=>{
+
     const getAllCntries = ()=>{
       var requestOptions:object = {
         method: 'GET',
@@ -23,24 +25,28 @@ function MainPage() {
         .then(result => setCountries(result))
         .catch(error => console.log('error', error));
     };
-    getAllCntries();
+    getAllCntries();  
+    
   },[]);
-  
   const handleClick = (countryName:any)=>{
     setSelectedCountry(countryName);
     localStorage.setItem('country', countryName);
   }
   
+  console.log(selectedRegion)
   return (
     <>
     {/* Header and Search bar below, here should go the NavBar to toggle between light and dark mode.*/}
       <header>
-        <NavBar/>
+        <NavBar setSelectedRegion={setSelectedRegion}/>
       </header>  
     {/* Main body with cards of the countries section.*/}
       <main className='mainPageMain'>
         <section className='mainPageCountriesSection'>
-          {countries ? countries.map((country:any)=>{
+          { 
+          countries  ?  countries.map((country:any)=>{
+            
+
           return <Card style={{ width: '18rem' }} className='mainPageCountryCard' onClick={ ()=>handleClick(country.name.common)} >
             {/* All the country info and a Loading screen.*/}
             <Link href={"/countryPage"} className='mainLinkToCountries' >
@@ -58,7 +64,9 @@ function MainPage() {
               </Card.Text>
             </Card.Body>
             </Link>
-          </Card>}): <><h1>Loading...</h1></>}
+          </Card>})
+          : 
+          <><h1>Loading...</h1></>}
         </section>
       </main>
     </>
