@@ -45,9 +45,7 @@ function MainPage() {
         <section className='mainPageCountriesSection'>
           { 
           countries  ?  countries.map((country:any)=>{
-            
-
-          return <Card style={{ width: '18rem' }} className='mainPageCountryCard' onClick={ ()=>handleClick(country.name.common)} >
+            if(selectedRegion === country.region ){return <Card style={{ width: '18rem' }} className='mainPageCountryCard' onClick={ ()=>handleClick(country.name.common)} >
             {/* All the country info and a Loading screen.*/}
             <Link href={"/countryPage"} className='mainLinkToCountries' >
             <Card.Img variant="top" src={country.flags.png} className='mainPageImgCard'alt='Country Flag'/>
@@ -64,7 +62,28 @@ function MainPage() {
               </Card.Text>
             </Card.Body>
             </Link>
-          </Card>})
+          </Card>}else if(country){
+            <Card style={{ width: '18rem' }} className='mainPageCountryCard' onClick={ ()=>handleClick(country.name.common)} >
+            {/* All the country info and a Loading screen.*/}
+            <Link href={"/countryPage"} className='mainLinkToCountries' >
+            <Card.Img variant="top" src={country.flags.png} className='mainPageImgCard'alt='Country Flag'/>
+            <Card.Body>
+              <Card.Title className='mainPageCardTitle'>{country.name.common}</Card.Title>
+              <Card.Text className='mainTextOfCountries'>
+                Population:  <p> {country.population.toLocaleString('en-US')}</p>
+              </Card.Text>
+              <Card.Text className='mainTextOfCountries'>
+                Region: <p>{country.region}</p>
+              </Card.Text>
+              <Card.Text className='mainTextOfCountries'>
+                Capital: <p>{country.capital ? country.capital : "None"}</p>
+              </Card.Text>
+            </Card.Body>
+            </Link>
+          </Card>
+
+          } 
+          })
           : 
           <><h1>Loading...</h1></>}
         </section>
