@@ -7,3 +7,20 @@
     display: flex;
     justify-content: center;
 }
+.mainCountrySection{
+    color: white;
+    padding: 1%;
+    position: relative;
+    margin-left: 25%;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(49, 49, 58);
+    width: 50%;
+    border-radius: 8px;
+}
+.countryGoBackHomeButton{
+    margin: 1%;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.445);
+    box-shadow: inset 1px 1px 5px 1px rgb(255, 254, 254);
+}
