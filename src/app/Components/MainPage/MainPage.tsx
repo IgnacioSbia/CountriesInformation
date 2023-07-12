@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import './MainPage.css';
 import { format } from 'util';
 import Link from 'next/link';
+import StyleToggleNavBar from '../StyleToggleNavBar/StyleToggleNavBar';
 
 function MainPage() {
   const [firstLoad, setFirstLoad] = useState<boolean>(true);
@@ -13,6 +14,7 @@ function MainPage() {
   const [selectedRegion, setSelectedRegion] = useState<any>();
   const [searchBar, setSearchBar] = useState<string>();
   const [filteredSearch, setFilteredSearch] = useState<any>();
+  const [mode, setMode] = useState(false)
   useEffect(()=>{
 
     const getAllCntries = ()=>{
@@ -33,12 +35,14 @@ function MainPage() {
     setSelectedCountry(countryName);
     localStorage.setItem('country', countryName);
   }
+  console.log(mode)
   
   console.log(searchBar)
   return (
     <>
     {/* Header and Search bar below, here should go the NavBar to toggle between light and dark mode.*/}
       <header>
+        <StyleToggleNavBar setMode={setMode} mode={mode}/>
         <NavBar setSelectedRegion={setSelectedRegion} searchBarValue={searchBar} setSearchBar={setSearchBar} setFilteredSearch={setFilteredSearch}/>
       </header>  
     {/* Main body with cards of the countries section.*/}

@@ -5,9 +5,12 @@ import Link from 'next/link';
 import leftArrowDarkMode from './CountryImgs/DarkModeArrow.svg';
 import leftArrowLightMode from './CountryImgs/LightModeArrow.svg'
 import Image from 'next/image';
+import StyleToggleNavBar from '../Components/StyleToggleNavBar/StyleToggleNavBar';
 function Page() {
 
   const [country, setCountry] = useState<any>();
+  const [mode, setMode] = useState(false)
+
   useEffect(()=>{
     const getCountryByName = async()=>{
       var requestOptions:object = {
@@ -30,8 +33,8 @@ function Page() {
   return (
     /*Here should go the NavBar to toggle between Dark and Light mode. */
     <main className='countryMainPageDark'>
-        { /*Here Goes the main section of the County Information.*/}
-        <Link href={"/"}><button className='countryGoBackHomeButton'><Image alt='leftArrow' src={leftArrowDarkMode} width={20} className='leftArrowButtonImage'/>Back</button></Link>
+        <StyleToggleNavBar setMode={setMode} mode={mode}/>
+        <Link href={"/"}><button className={mode ? 'countryGoBackHomeButtonLight': 'countryGoBackHomeButtonDark'}><Image alt='leftArrow' src={mode ? leftArrowDarkMode : leftArrowLightMode} width={20} className='leftArrowButtonImage'/>Back</button></Link>
         {country ? 
           
         <>
@@ -40,11 +43,11 @@ function Page() {
               <img  src={country[0].flags.png} className='countryPageCountryImg'/>
             </section>
             <aside className='countryMainInfo'>
-                <h1 className='countryMainTitleCountry'>{country[0].name.common}</h1>
-                <p className='countryPageInfo'>Population: {country[0].population.toLocaleString('en-US')}</p>
-                <p className='countryPageInfo'>Region: {country[0].region}</p>
-                <p className='countryPageInfo'>Sub Region: {country[0].subregion ? country[0].subregion : "none"}</p>
-                <p className='countryPageInfo'>Currency:</p>
+                <h1 className='countryMainTitleCountryDark'>{country[0].name.common}</h1>
+                <p className='countryPageInfoDark'>Population: {country[0].population.toLocaleString('en-US')}</p>
+                <p className='countryPageInfoDark'>Region: {country[0].region}</p>
+                <p className='countryPageInfoDark'>Sub Region: {country[0].subregion ? country[0].subregion : "none"}</p>
+                <p className='countryPageInfoDark'>Currency:</p>
             </aside>
           </section>
         </> 
