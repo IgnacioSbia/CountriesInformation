@@ -34,7 +34,8 @@
         height: 100vh;
         background-color: rgb(49, 49, 58);
     }
-    .mainCountrySection{
+
+    .mainCountrySectionDark{
         color: white;
         padding: 2%;
         position: relative;
@@ -42,12 +43,15 @@
         border-radius: 8px;
     }
     .countryGoBackHomeButtonDark{
+        border-radius: 5px;
         margin: 1%;
         display: flex;
         justify-content: center;
         align-items: center;
         list-style: none;
         padding: 2%;
+        padding-left: 3%;
+        padding-right: 3%;
         width: 60px;
         color: white;
         border: none;
@@ -64,9 +68,13 @@
         align-items: center;
         list-style: none;
         padding: 2%;
+        padding-left: 3%;
+        padding-right: 3%;
         width: 60px;
         color: rgb(0, 0, 0);
         border: none;
+        border: 1px solid rgba(0, 0, 0, 0.247);
+        border-radius: 5px;
         background-color: rgba(218, 218, 218, 0.445);
     }
     .countryMainPageLight{
@@ -75,6 +83,109 @@
         height: 100vh;
         background-color: rgb(255, 255, 255)09;
     }
+    .mainCountrySectionLight{
+        color: black;
+        padding: 2%;
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.986);
+        border: 1px solid rgba(0, 0, 0, 0.247);
+        border-radius: 8px;
+    }
+}
+.countryMainInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1%;
+}
+.countryMainTitleCountryDark{
+    padding-bottom: 12%;
+    font-size: 48px;
+}
+.countryPageInfoDark{
+    font-size: 18px;
+    padding: 3%;
+}
+.countryPageImg{
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    padding-right: 5%;
+
+}
+.countryPageCountryImg{
+    border-radius: 8px;
+}
+.countryMainPageDark{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(49, 49, 58);
 }
 
+.mainCountrySectionDark{
+    display: flex;
+    color: white;
+    justify-content: center;
+    padding: 2%;
+    position: relative;
+    background-color: rgb(49, 49, 58);
+    border-radius: 8px;
+}
+.countryGoBackHomeButtonDark{
+    border-radius: 5px;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 30px;
+    color: white;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.445);
+}
+.leftArrowButtonImage{
+    padding-right: 10%;
+}
+/*Light Mode*/
+.countryGoBackHomeButtonLight{
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 30px;
+    color: rgb(0, 0, 0);
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.247);
+    border-radius: 5px;
+    background-color: rgba(218, 218, 218, 0.445);
+}
+.countryMainPageLight{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255)09;
+}
+.mainCountrySectionLight{
+    width: 60%;
+    color: black;
+    padding: 2%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.986);
+    border: 1px solid rgba(0, 0, 0, 0.247);
+    border-radius: 8px;
+}
+.countryPageCountryImg{
+    width: max-content;
+}
 

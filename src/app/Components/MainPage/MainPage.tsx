@@ -47,16 +47,16 @@ function MainPage() {
       </header>  
     {/* Main body with cards of the countries section.*/}
       <main className='mainPageMain'>
-        <section className='mainPageCountriesSection'>
+        <section className={mode ? 'mainPageCountriesSection': 'mainPageCountriesSectionDark'}>
           { 
           countries  ?  countries.map((country:any)=>{
             if(selectedRegion === country.region){
-              if(filteredSearch == country.name.common){return <Card style={{ width: '18rem' }} className='mainPageCountryCard' onClick={ ()=>handleClick(country.name.common)} >
+              if(filteredSearch == country.name.common){return <Card style={{ width: '18rem' }} className={mode ? 'mainPageCountryCard' : 'mainPageCountryCardDark'} onClick={ ()=>handleClick(country.name.common)} >
               
               {/* All the countries info and Loading screen.*/}
-              <Link href={"/countryPage"} className='mainLinkToCountries' >
+              <Link href={"/countryPage"} className={mode ?'mainLinkToCountries': 'mainLinkToCountriesDark'} >
               <Card.Img variant="top" src={country.flags.png} className='mainPageImgCard'alt='Country Flag'/>
-              <Card.Body>
+              <Card.Body className={mode ?'mainPageCardBodyLight' : 'mainPageCardBodyDark'}>
                 <Card.Title className='mainPageCardTitle'>{country.name.common}</Card.Title>
                 <Card.Text className='mainTextOfCountries'>
                   Population:  <p> {country.population.toLocaleString('en-US')}</p>

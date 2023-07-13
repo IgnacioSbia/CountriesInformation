@@ -32,13 +32,13 @@ function Page() {
 
   return (
     /*Here should go the NavBar to toggle between Dark and Light mode. */
-    <main className='countryMainPageDark'>
+    <main className={mode ?'countryMainPageLight':'countryMainPageDark'}>
         <StyleToggleNavBar setMode={setMode} mode={mode}/>
-        <Link href={"/"}><button className={mode ? 'countryGoBackHomeButtonLight': 'countryGoBackHomeButtonDark'}><Image alt='leftArrow' src={mode ? leftArrowDarkMode : leftArrowLightMode} width={20} className='leftArrowButtonImage'/>Back</button></Link>
+        <Link href={"/"}><button className={mode ? 'countryGoBackHomeButtonLight': 'countryGoBackHomeButtonDark'}><Image alt='leftArrow' src={mode ? leftArrowLightMode : leftArrowDarkMode} width={20} className='leftArrowButtonImage'/>Back</button></Link>
         {country ? 
           
         <>
-          <section className='mainCountrySection'>
+          <section className={mode ? 'mainCountrySectionLight':'mainCountrySectionDark'}>
             <section className='countryPageImg'>
               <img  src={country[0].flags.png} className='countryPageCountryImg'/>
             </section>

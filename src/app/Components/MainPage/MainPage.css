@@ -29,3 +29,23 @@
     text-decoration: none;
     color: black;
 }
+
+/*Dark Mode*/
+.mainPageCountriesSectionDark{
+    justify-content: center;
+    margin: auto;
+    padding: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(38, 38, 43);
+}
+.mainLinkToCountriesDark{
+    text-decoration: none;
+    color: white;
+}
+.mainPageCountryCardDark{
+    background-color: rgb(38, 38, 43);
+}
+.mainPageCardBodyDark{
+    background-color:  rgb(38, 38, 43)  !important;
+}

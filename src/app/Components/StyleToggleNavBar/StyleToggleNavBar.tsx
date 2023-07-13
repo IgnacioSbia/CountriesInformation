@@ -19,10 +19,10 @@ function StyleToggleNavBar({setMode,mode}:any) {
   return (
     <main className='styleToggleNavBarMain'>
         <div>
-            <h1 className='styleToggleNavBarTitleLight'>Where in the world?</h1>
+            <h1 className={mode ? 'styleToggleNavBarTitleLight' : 'styleToggleNavBarTitleDark'}>Where in the world?</h1>
         </div>
         <div>
-            <Image onClick={handleClick} src={mode ? darkMoon :lightMoon} alt='Change between Dark and Light mode' width={25}/>
+            <Image onClick={handleClick} src={mode ? darkMoon :lightMoon} alt='Change between Dark and Light mode' width={25} className='styleToggleNavBarImage'/>
         </div>
     </main>
   )

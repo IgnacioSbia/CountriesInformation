@@ -4,10 +4,15 @@
 }
 
 .styleToggleNavBarTitleLight{
+    color: black;
     font-size: 24px;
 }
 .styleToggleNavBarMain{
     margin-top: 1%;
     display: flex;
     justify-content: space-around;
+}
+.styleToggleNavBarTitleDark{
+    color: white;
+    font-size: 24px;
 }
